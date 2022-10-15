@@ -158,6 +158,12 @@ public class BuildTools : EditorWindow
         {
             string apkName = PlayerSettings.productName + ".apk";
             options.locationPathName = System.IO.Path.Combine("Builds", target.ToString(), apkName);
+        }else if (target == BuildTarget.StandaloneWindows64)
+        {
+            options.locationPathName = System.IO.Path.Combine("Builds", target.ToString(), PlayerSettings.productName+".exe");
+        }else if (target == BuildTarget.StandaloneLinux64)
+        {
+            options.locationPathName = System.IO.Path.Combine("Builds", target.ToString(), PlayerSettings.productName+".x86_64");
         }
         else
             options.locationPathName = System.IO.Path.Combine("Builds", target.ToString(), PlayerSettings.productName);
