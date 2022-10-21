@@ -154,6 +154,7 @@ public class BuildTools : EditorWindow
         options.targetGroup = GetTargetGroupForTarget(target);
 
         // set the location path name
+        EditorUserBuildSettings.SwitchActiveBuildTarget(GetTargetGroupForTarget(target), target);
         if (target == BuildTarget.Android)
         {
             string apkName = PlayerSettings.productName + ".apk";
